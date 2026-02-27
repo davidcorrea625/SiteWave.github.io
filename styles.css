@@ -1,0 +1,44 @@
+body {
+  margin:0;
+  font-family: 'SF Pro Display', sans-serif;
+  background:#0a0a0f;
+  color:white;
+  overflow-x:hidden;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(135deg, #0a0a0f, #111827);
+  color: white;
+}
+
+.logo {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("logominha.png") center/contain no-repeat;
+  background-size: 80%; /* aumenta aqui */
+  background-color:#0a0a0f;
+  opacity: 0.05;
+}
+
+h1 {
+  background: linear-gradient(90deg,#00d4ff,#a855f7);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-card {
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:20px;
+  padding:40px;
+}

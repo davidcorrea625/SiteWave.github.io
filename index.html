@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SiteWave | Criação de Sites Profissionais e Estratégicos</title>
+
+<meta name="description" content="Criação de sites profissionais com foco em estratégia, posicionamento e conversão. Transforme sua presença digital em crescimento real.">
+
+<meta property="og:title" content="SiteWave | Estratégia Digital de Alto Impacto">
+<meta property="og:description" content="Sites estratégicos que posicionam sua marca e geram oportunidades reais.">
+<meta property="og:type" content="website">
+<link rel="shortcut icon" href="logominha.ico" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--azul:#00d4ff;
+--roxo:#7b2cff;
+--pink:#ff3cac;
+--dark:#070b14;
+--card:#121829;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:var(--dark);
+color:white;
+overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+position:fixed;
+width:100%;
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+transition:0.3s;
+}
+
+header.scrolled{
+background:rgba(0,0,0,0.8);
+backdrop-filter:blur(12px);
+}
+
+.logo img{
+height:45px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:500;
+font-size:15px;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+overflow:hidden;
+}
+
+.hero-bg{
+position:absolute;
+width:110%;
+height:110%;
+background:url("logominha.png") center center no-repeat;
+background-size:cover;
+animation:zoom 20s ease-in-out infinite alternate;
+z-index:1;
+}
+
+.hero-overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(to bottom,rgba(0,0,0,0.6),rgba(0,0,0,0.95));
+z-index:2;
+}
+
+.hero-content{
+position:relative;
+z-index:3;
+max-width:900px;
+padding:20px;
+}
+
+.hero h1{
+font-size:58px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:22px;
+max-width:700px;
+margin:0 auto 30px auto;
+line-height:1.6;
+opacity:0.9;
+}
+
+.gradient{
+background:linear-gradient(90deg,var(--azul),var(--roxo),var(--pink));
+background-clip:text;
+-webkit-background-clip:text;
+color:transparent;
+-webkit-text-fill-color:transparent;
+}
+
+.btn{
+padding:16px 45px;
+border-radius:40px;
+background:linear-gradient(90deg,var(--azul),var(--pink));
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+display:inline-block;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+box-shadow:0 0 30px rgba(0,212,255,0.6);
+}
+
+/* SECTIONS */
+section{
+padding:90px 8%;
+}
+
+.titulo{
+text-align:center;
+font-size:36px;
+margin-bottom:40px;
+}
+
+.text-center{
+text-align:center;
+max-width:900px;
+margin:0 auto 50px auto;
+font-size:20px;
+line-height:1.6;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:var(--card);
+padding:30px;
+border-radius:18px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px rgba(0,212,255,0.4);
+}
+
+/* FAQ */
+.faq-item{
+background:var(--card);
+margin-bottom:15px;
+padding:20px;
+border-radius:10px;
+cursor:pointer;
+}
+
+.faq-answer{
+display:none;
+margin-top:10px;
+opacity:0.9;
+line-height:1.6;
+}
+
+/* FORM */
+form{
+max-width:600px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input,textarea{
+padding:14px;
+border:none;
+border-radius:8px;
+background:#1e293b;
+color:white;
+}
+
+textarea{
+height:120px;
+resize:none;
+}
+
+footer{
+text-align:center;
+padding:30px;
+opacity:0.6;
+font-size:14px;
+}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+.hero h1{font-size:36px;}
+.hero p{font-size:18px;}
+}
+
+@keyframes zoom{
+from{transform:scale(1.1);}
+to{transform:scale(1.2);}
+}
+
+/* MENU ANIMAÇÃO */
+nav a {
+position: relative;
+transition: 0.3s;
+}
+
+nav a::after {
+content: "";
+position: absolute;
+left: 0;
+bottom: -5px;
+width: 0%;
+height: 2px;
+background: linear-gradient(90deg,var(--azul),var(--pink));
+transition: 0.4s;
+}
+
+nav a:hover {
+color: var(--azul);
+}
+
+nav a:hover::after {
+width: 100%;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float {
+position: fixed;
+bottom: 25px;
+right: 25px;
+width: 60px;
+height: 60px;
+background: linear-gradient(135deg,#25d366,#128c7e);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+z-index: 1000;
+animation: pulse 2s infinite;
+transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+transform: scale(1.1);
+box-shadow: 0 0 25px rgba(37,211,102,0.8);
+}
+
+@keyframes pulse {
+0% { box-shadow: 0 0 0 0 rgba(37,211,102, 0.7); }
+70% { box-shadow: 0 0 0 15px rgba(37,211,102, 0); }
+100% { box-shadow: 0 0 0 0 rgba(37,211,102, 0); }
+}
+
+/* BOTÕES MAIS PREMIUM */
+.btn {
+transition: all 0.4s ease;
+}
+
+.btn:hover {
+transform: translateY(-5px) scale(1.03);
+}
+/* CURSOR PERSONALIZADO */
+body {
+cursor: none;
+}
+
+.cursor {
+width: 12px;
+height: 12px;
+background: var(--azul);
+border-radius: 50%;
+position: fixed;
+pointer-events: none;
+z-index: 9999;
+transform: translate(-50%, -50%);
+transition: transform 0.15s ease, background 0.3s;
+}
+
+.cursor-follower {
+width: 35px;
+height: 35px;
+border: 2px solid var(--pink);
+border-radius: 50%;
+position: fixed;
+pointer-events: none;
+z-index: 9998;
+transform: translate(-50%, -50%);
+transition: transform 0.25s ease-out, width 0.3s, height 0.3s, border 0.3s;
+}
+
+.cursor-hover {
+transform: translate(-50%, -50%) scale(1.8);
+background: var(--pink);
+}
+
+.cursor-follower-hover {
+width: 60px;
+height: 60px;
+border-color: var(--azul);
+}
+</style>
+</head>
+<!-- BOTÃO FLUTUANTE WHATSAPP -->
+<a href="https://wa.me/5547992815837" 
+   class="whatsapp-float" 
+   target="_blank">
+   <svg viewBox="0 0 32 32" width="28" height="28" fill="white">
+     <path d="M19.11 17.23c-.29-.15-1.7-.84-1.96-.94-.26-.1-.45-.15-.64.15-.19.29-.74.94-.91 1.14-.17.19-.34.22-.63.07-.29-.15-1.22-.45-2.33-1.43-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.43-.51.14-.17.19-.29.29-.49.1-.19.05-.36-.02-.51-.07-.15-.64-1.55-.88-2.13-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.49.07-.74.36-.26.29-.97.95-.97 2.32s1 2.69 1.14 2.87c.14.19 1.96 2.99 4.75 4.19.66.29 1.17.46 1.57.59.66.21 1.27.18 1.75.11.53-.08 1.7-.69 1.94-1.36.24-.66.24-1.23.17-1.36-.07-.13-.26-.21-.55-.36z"/>
+   </svg>
+</a>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+
+<script>
+const cursor = document.querySelector(".cursor");
+const follower = document.querySelector(".cursor-follower");
+
+let mouseX = 0;
+let mouseY = 0;
+let followerX = 0;
+let followerY = 0;
+
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+
+  cursor.style.left = mouseX + "px";
+  cursor.style.top = mouseY + "px";
+});
+
+function animate() {
+  followerX += (mouseX - followerX) * 0.15;
+  followerY += (mouseY - followerY) * 0.15;
+
+  follower.style.left = followerX + "px";
+  follower.style.top = followerY + "px";
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+const hoverElements = document.querySelectorAll("a, button, .card, .faq-item");
+
+hoverElements.forEach(el => {
+  el.addEventListener("mouseenter", () => {
+    cursor.classList.add("cursor-hover");
+    follower.classList.add("cursor-follower-hover");
+  });
+
+  el.addEventListener("mouseleave", () => {
+    cursor.classList.remove("cursor-hover");
+    follower.classList.remove("cursor-follower-hover");
+  });
+});
+</script>
+<body>
+
+<header id="header">
+<div class="logo"><img src="logominha.png" alt="SiteWave"></div>
+<nav>
+<a href="#servicos">Serviços</a>
+<a href="#resultados">Resultados</a>
+<a href="#faq">FAQ</a>
+<a href="#contato">Contato</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<h1 class="gradient">Transformamos Presença Digital em Crescimento Real</h1>
+<p>
+Empresa recém-lançada com visão estratégica.
+Criamos sites profissionais focados em posicionamento e conversão.
+</p>
+<a href="#contato" class="btn">Solicitar Orçamento</a>
+</div>
+</section>
+
+<section id="servicos">
+<h2 class="titulo gradient">Nossos Serviços</h2>
+<p class="text-center">
+Desenvolvemos sites modernos, responsivos e estruturados para fortalecer sua marca no digital.
+</p>
+
+<div class="grid">
+<div class="card"><h3>Sites Institucionais</h3><p>Presença profissional para sua empresa.</p></div>
+<div class="card"><h3>Landing Pages</h3><p>Estrutura focada em geração de oportunidades.</p></div>
+<div class="card"><h3>E-commerce</h3><p>Lojas virtuais prontas para vender.</p></div>
+<div class="card"><h3>SEO Inicial</h3><p>Base otimizada para aparecer no Google.</p></div>
+</div>
+</section>
+
+<section id="resultados">
+<h2 class="titulo gradient">O Que Sua Empresa Pode Alcançar</h2>
+<p class="text-center">
+Com estrutura digital correta, sua empresa pode conquistar autoridade,
+visibilidade e novas oportunidades de negócio.
+</p>
+</section>
+
+<section id="faq">
+<h2 class="titulo gradient">Perguntas Frequentes</h2>
+
+<div class="faq-item">
+<h4>O site aparece no Google?</h4>
+<div class="faq-answer">Sim. Todos os projetos são entregues com estrutura otimizada para indexação.</div>
+</div>
+
+<div class="faq-item">
+<h4>Vocês oferecem suporte?</h4>
+<div class="faq-answer">Sim. Oferecemos suporte inicial após a entrega.</div>
+</div>
+
+</section>
+
+<section id="contato">
+<h2 class="titulo gradient">Solicite um Orçamento</h2>
+
+<form id="whatsappForm">
+<input type="text" id="nome" placeholder="Seu Nome" required>
+<input type="email" id="email" placeholder="Seu Email" required>
+<textarea id="mensagem" placeholder="Descreva seu projeto" required></textarea>
+<button type="submit" class="btn">Enviar</button>
+</form>
+</section>
+
+<footer>
+© 2026 SiteWave - Todos os direitos reservados
+</footer>
+
+<script>
+
+window.addEventListener("scroll", () => {
+document.getElementById("header")
+.classList.toggle("scrolled", window.scrollY > 50);
+});
+
+document.querySelectorAll('.faq-item').forEach(item=>{
+item.addEventListener('click',()=>{
+const answer=item.querySelector('.faq-answer');
+answer.style.display=answer.style.display==="block"?"none":"block";
+});
+});
+
+document.getElementById("whatsappForm").addEventListener("submit",function(e){
+e.preventDefault();
+const nome=document.getElementById("nome").value;
+const email=document.getElementById("email").value;
+const mensagem=document.getElementById("mensagem").value;
+const texto=`Novo Pedido:%0A%0ANome: ${nome}%0AEmail: ${email}%0AProjeto: ${mensagem}`;
+window.open(`https://wa.me/5547992815837?text=${texto}`,"_blank");
+});
+
+</script>
+
+</body>
+</html>
